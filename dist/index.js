@@ -22,17 +22,19 @@ const generateNewTagFromOld = (oldYear, oldMonth, oldItr) => {
   if (curYear != oldYear) {
     newYear = curYear;
   }
-  return `v${newYear}.${newMonth}.${newItr}`;
+  return `${newYear}.${newMonth}.${newItr}`;
 };
 
 const getNewReleaseTag = (oldReleaseTag) => {
-  if (oldReleaseTag && oldReleaseTag.startsWith("v")) {
+	try {
     const [oldYear, oldMonth, oldItr] = oldReleaseTag
       .substring(1)
       .split(".")
       .map((x) => Number(x));
     return generateNewTagFromOld(oldYear, oldMonth, oldItr);
-  }
+} catch (error) {
+	
+}
   return generateNewTagFromOld(-1, -1, -1);
 };
 
