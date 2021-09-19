@@ -3,8 +3,8 @@
 - GitHub action to automate the process of creating the next release tag for your repository.
 - This action will set a ENV variable named `next_release_version` which can then be used to create release.
 - This action uses the prev release tag an increments over it.
-- Template of release tag will be: `vyy.mm.i`, where yy=year, mm=month, i=iteration.
-- For example, third release in December 2020 will be: `v20.12.3`
+- Template of release tag will be: `yy.mm.i`, where yy=year, mm=month, i=iteration.
+- For example, third release in December 2020 will be: `20.12.3`
 
 ## Inputs
 
